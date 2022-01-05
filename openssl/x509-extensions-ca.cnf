@@ -1,0 +1,51 @@
+[req]
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+x509_extensions = v3_ca # The extensions to add to the self signed cert
+
+[ req_distinguished_name ]
+countryName			= Country Name (2 letter code)
+countryName_default		= TW
+countryName_min			= 2
+countryName_max			= 2
+
+stateOrProvinceName		= State or Province Name (full name)
+stateOrProvinceName_default	= Taiwan
+
+localityName			= Locality Name (eg, city)
+localityName_default    = Taipei
+
+0.organizationName		= Organization Name (eg, company)
+0.organizationName_default	= A10 Networks
+
+# we can do this but it is not needed normally :-)
+#1.organizationName		= Second Organization Name (eg, company)
+#1.organizationName_default	= World Wide Web Pty Ltd
+
+organizationalUnitName		    = Organizational Unit Name (eg, section)
+organizationalUnitName_default	= SW
+
+commonName			= Common Name (e.g. server FQDN or YOUR name)
+commonName_max			= 64
+
+emailAddress			= Email Address
+emailAddress_max		= 64
+
+# SET-ex3			= SET extension number 3
+
+[v3_req]
+# Extensions to add to a certificate request
+
+keyUsage = digitalSignature, keyEncipherment
+#subjectAltName = @alt_names
+
+[v3_ca]
+# Extensions for a typical CA
+
+# PKIX recommendation.
+
+subjectKeyIdentifier=hash
+
+authorityKeyIdentifier=keyid:always,issuer
+
+basicConstraints = CA:TRUE
