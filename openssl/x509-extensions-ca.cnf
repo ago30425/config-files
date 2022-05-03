@@ -3,7 +3,7 @@ req_extensions = v3_req
 distinguished_name = req_distinguished_name
 x509_extensions = v3_ca # The extensions to add to the self signed cert
 
-[ req_distinguished_name ]
+[req_distinguished_name]
 countryName			= Country Name (2 letter code)
 countryName_default		= TW
 countryName_min			= 2
@@ -29,6 +29,7 @@ commonName			= Common Name (e.g. server FQDN or YOUR name)
 commonName_max			= 64
 
 emailAddress			= Email Address
+emailAddress_default    = cduncan@a10networks.com
 emailAddress_max		= 64
 
 # SET-ex3			= SET extension number 3
